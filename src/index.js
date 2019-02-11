@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
 
+//enable Chrome Redux DevTools extension
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+//create Redux store with reducers
 const store = createStore(
-    reducers
+    reducers,
+    composeEnhancers(applyMiddleware(reduxThunk))
 );
 
 ReactDOM.render(

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+// render search box for movie titles
 class SearchForm extends React.Component {
     onSubmit = (formValues) => {
         console.log('SearchForm Component Submit');
