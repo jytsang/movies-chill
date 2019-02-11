@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+
+import CastList from '../cast/CastList';
 
 import { fetchMovie } from '../../actions';
 import loader from '../../utlities/Loader';
@@ -23,9 +24,9 @@ class MovieList extends React.Component {
         const { ...movie } = this.props.movie;
 
         return (
-            <div className="movies-list py-4">
+            <div className="movie-show py-4">
                 <div className="container">
-                    <div className="row">
+                    <div className="row mb-5">
                         <div className="col-12">
                             <div className="row no-gutters">
                                 <div className="col-6 col-md-4">
@@ -35,7 +36,7 @@ class MovieList extends React.Component {
                                         className="img-fluid"
                                     />
                                 </div>
-                                <div className="col-12 col-md-8 p-3">
+                                <div className="col-12 col-md-8 p-0 p-md-3">
                                     <h1 className="mb-1">{movie.title}</h1>
                                     <p className="text-muted">{movie.release_date}</p>
                                     <div className="mb-4">
@@ -50,11 +51,8 @@ class MovieList extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-12">
-                            <h2 className="h4 my-4">Cast</h2>
-                        </div>
-                    </div>
+                    <h2 className="h4">Cast</h2>
+                    <CastList castId={this.props.match.params.id} />
                 </div>
             </div>
         );

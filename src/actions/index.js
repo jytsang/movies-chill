@@ -10,14 +10,21 @@ import {
 
  //get list of movies from api with listType (trending, popular, etc.) parameter
  export const fetchMovies = (listType = "trending") => async dispatch => {
-    const response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie/day?api_key=64f7b32bc10e82b03cd06c41c51ff1e5`);
+    const response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie/day?api_key=${process.env.REACT_APP_API_KEY}`);
 
     dispatch({ type: FETCH_MOVIES, payload: response.data });
 };
 
 //get movie details from api with movie id paramter in URL
  export const fetchMovie = (id) => async dispatch => {
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=64f7b32bc10e82b03cd06c41c51ff1e5`);
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`);
 
-    dispatch({ type: FETCH_MOVIES, payload: response.data });
+    dispatch({ type: FETCH_MOVIE, payload: response.data });
+};
+
+//get cast list from api with movie id parameter
+export const fetchCast = (id) => async dispatch => {
+   const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}`);
+
+   dispatch({ type: FETCH_CAST, payload: response.data.cast });
 };
