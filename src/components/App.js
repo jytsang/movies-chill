@@ -10,7 +10,7 @@ const App = () => {
             <div className="wrapper">
                 <Header />
 
-                {/* <Route path="/" exact component={MovieList} /> */}
+                <Route path="/" exact component={MovieList} />
             </div>
         </BrowserRouter>
     );
