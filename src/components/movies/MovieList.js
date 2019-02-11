@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { fetchMovies } from '../../actions';
+import Loader from '../../utlities/Loader';
 
 // render list of movies
 class MovieList extends React.Component {
@@ -14,13 +16,13 @@ class MovieList extends React.Component {
     renderList() {
         //wait for list of results
         if (!this.props.movies.results) {
-            return <div>Loading...</div>;
+            return Loader();
         }
         
         //create and return html for each movie in list
         return this.props.movies.results.map(movie => {
             return (
-                <div key={movie.id} className="col-12 col-md-6 col-lg-4 my-3">
+                <div key={movie.id} className="col-12 col-md-6 col-lg-4 my-3 d-flex align-items-stretch">
                     <div className="card shadow-sm overflow-hidden">
                         <div className="row no-gutters">
                             <div className="col-4">
@@ -50,7 +52,7 @@ class MovieList extends React.Component {
 
     render() {
         return (
-            <div className="movies-list">
+            <div className="movies-list py-3">
                 <div className="container">
                     <div className="row">
                         {this.renderList()}
