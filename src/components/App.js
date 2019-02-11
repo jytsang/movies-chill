@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './template/Header';
 import MovieList from './movies/MovieList';
+import MovieShow from './movies/MovieShow';
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
                 <Header />
 
                 <Route path="/" exact component={MovieList} />
+                <Route path="/movies/:id" exact component={MovieShow} />
             </div>
         </BrowserRouter>
     );

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { fetchMovies } from '../../actions';
-import Loader from '../../utlities/Loader';
+import loader from '../../utlities/Loader';
 
 // render list of movies
 class MovieList extends React.Component {
@@ -16,7 +16,7 @@ class MovieList extends React.Component {
     renderList() {
         //wait for list of results
         if (!this.props.movies.results) {
-            return Loader();
+            return loader();
         }
         
         //create and return html for each movie in list
