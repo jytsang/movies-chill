@@ -16,6 +16,9 @@ export const fetchMovies = (listType, personId) => async dispatch => {
       case 'trending':
          response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie/day?api_key=${process.env.REACT_APP_API_KEY}`);
          break;
+      case 'popular':
+         response = await axios.get(`https://api.themoviedb.org/3/movie/${listType}?api_key=${process.env.REACT_APP_API_KEY}`);
+         break;
       case 'filmography':
          response = await axios.get(`https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}`);
          response.data.results = response.data.cast;
