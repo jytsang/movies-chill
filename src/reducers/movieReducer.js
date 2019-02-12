@@ -1,5 +1,4 @@
 import {
-    SEARCH_MOVIES,
     FETCH_MOVIES,
     FETCH_MOVIE
 } from '../actions/types';

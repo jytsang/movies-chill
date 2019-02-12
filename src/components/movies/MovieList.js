@@ -9,7 +9,7 @@ import loader from '../../utlities/Loader';
 class MovieList extends React.Component {
     componentDidMount() {
         //fetch movies from api
-        this.props.fetchMovies(this.props.listType, this.props.personId);
+        this.props.fetchMovies(this.props.listType, this.props.args);
     }
 
     //render list of movies
