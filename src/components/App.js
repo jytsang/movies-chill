@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { Router, Route, Redirect, Switch } from 'react-router-dom';
 import history from '../utilities/history';
 
 import Header from './template/Header';
@@ -11,7 +11,7 @@ import PersonShow from './cast/PersonShow';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <div className="wrapper">
                 <Header />
                 <Switch>
@@ -24,7 +24,7 @@ const App = () => {
                     <Redirect to="/" />
                 </Switch>
             </div>
-        </BrowserRouter>
+        </Router>
     );
 };
 
