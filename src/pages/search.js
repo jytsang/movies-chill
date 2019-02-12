@@ -23,7 +23,7 @@ class search extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.movies
+        keyword: state.keyword
     };
 };
 

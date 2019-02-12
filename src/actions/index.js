@@ -11,7 +11,7 @@ import {
 } from './types';
 
 //get list of movies from api with listType (trending, popular, etc.) parameter
-export const fetchMovies = (listType, ...args) => async dispatch => {   
+export const fetchMovies = (listType, ...args) => async dispatch => {
    //convert args array to object with key:value passed through prop
    const params = _.chain(args).keyBy('key').mapValues('data').value();
    
@@ -62,7 +62,9 @@ export const fetchPerson = (id) => async dispatch => {
    dispatch({ type: FETCH_PERSON, payload: response.data });
 };
 
+//set keyword state
 export const setKeyword = (keyword) => dispatch => {
    dispatch({ type: SET_KEYWORD, payload: keyword });
    history.push(`/search/${keyword}`);
+   dispatch(fetchMovies('search', { key: 'keyword', data: keyword }));
 };
