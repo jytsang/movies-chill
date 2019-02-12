@@ -6,8 +6,9 @@ import MovieList from '../components/movies/MovieList';
 class trending extends React.Component {
     render() {
         return (
-            <div className="movies-list py-3">
+            <div className="trending-movies py-3">
                 <div className="container">
+                    <h1>Trending Movies</h1>
                     <MovieList listType="trending" />
                 </div>
             </div>

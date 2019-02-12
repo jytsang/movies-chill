@@ -38,10 +38,8 @@ class CastList extends React.Component {
     render() {
         return (
             <div className="cast-list">
-                <div className="container">
-                    <div className="row">
-                        {this.renderList()}
-                    </div>
+                <div className="row">
+                    {this.renderList()}
                 </div>
             </div>
         );
