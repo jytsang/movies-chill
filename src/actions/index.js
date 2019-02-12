@@ -18,7 +18,7 @@ export const fetchMovies = (listType, personId) => async dispatch => {
          break;
       case 'filmography':
          response = await axios.get(`https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}`);
-         response.data = response.data.cast;
+         response.data.results = response.data.cast;
          break;
       default:
          response.data = {};

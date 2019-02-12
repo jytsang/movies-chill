@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchPerson } from '../../actions';
 import loader from '../../utlities/Loader';
 
+import MovieList from '../movies/MovieList';
+
 class PersonShow extends React.Component {
 
     componentDidMount() {
@@ -35,12 +37,14 @@ class PersonShow extends React.Component {
                         <div className="col-12 col-md-9">
                             <h1 className="mb-1">{person.name}</h1>
                             <div className="text-muted mb-3">
-                                Born: {person.place_of_birth} on {person.birthday}
+                                Born in {person.place_of_birth} on {person.birthday}
                             </div>
                             <h2 className="h4">Biography</h2>
                             <p>{person.biography}</p>
                         </div>
                     </div>
+                    <h2 className="h4">Filmography</h2>
+                    <MovieList listType="filmography" personId={person.id} />
                 </div>
             </div>
         );
