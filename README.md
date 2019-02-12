@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Evaluation project for Indorse
 
-## Available Scripts
+This project was created to fetch movies and people from [The Movie Database API](https://www.themoviedb.org/documentation/api). It uses the React Javascript framework to render content and Redux for state control.
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
+This will run the app and make it available on localhost.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Core Modules
 
-### `npm test`
+### Create React App
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Create React App](https://github.com/facebook/create-react-app) is used to quickly scaffold the project with React and setup run scripts.
 
-### `npm run build`
+### React Router
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[React Router](https://github.com/ReactTraining/react-router) is used for route control in the application.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[axios](https://github.com/axios/axios) is used to fetch data from the API.
 
-### `npm run eject`
+### Redux
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Redux](https://redux.js.org/) is used for state control.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Redux Thunk
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Redux Thunk](https://github.com/reduxjs/redux-thunk) is used as a middleware to control AJAX requests and dispatch actions.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Redux Form
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Redux Form](https://redux-form.com/8.1.0/) is used to create the search box and connect the form to the redux state.
