@@ -11,9 +11,7 @@ import {
 } from './types';
 
 //get list of movies from api with listType (trending, popular, etc.) parameter
-export const fetchMovies = (listType, ...args) => async dispatch => {
-   console.log('test');
-   
+export const fetchMovies = (listType, ...args) => async dispatch => {   
    //convert args array to object with key:value passed through prop
    const params = _.chain(args).keyBy('key').mapValues('data').value();
    
