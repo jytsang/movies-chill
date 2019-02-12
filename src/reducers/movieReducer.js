@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {
     SEARCH_MOVIES,
     FETCH_MOVIES,

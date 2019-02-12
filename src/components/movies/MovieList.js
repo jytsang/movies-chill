@@ -52,7 +52,7 @@ class MovieList extends React.Component {
 
     render() {
         return (
-            <div className="movies-list py-3">
+            <div className="movies-list">
                 <div className="row">
                     {this.renderList()}
                 </div>
