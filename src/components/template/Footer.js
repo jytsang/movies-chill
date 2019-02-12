@@ -9,7 +9,7 @@ const Header = () => {
                     Movies and Chill
                 </Link> 
             </div>
-            created by <a href="https://www.jytsang.com/" target="_blank" className="text-white">Jeun Yun Tsang</a> 
+            created by <a href="https://www.jytsang.com/" rel="noopener noreferrer" target="_blank" className="text-white">Jeun Yun Tsang</a> 
         </footer>
     );
 };

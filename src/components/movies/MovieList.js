@@ -26,13 +26,15 @@ class MovieList extends React.Component {
                     <div className="card shadow-sm overflow-hidden w-100">
                         <div className="row no-gutters">
                             <div className="col-4">
-                                <Link to={`/movies/${movie.id}`}>
-                                    <img 
-                                        src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
-                                        alt={movie.title}
-                                        className="img-fluid"
-                                    />
-                                </Link>
+                                {movie.poster_path &&
+                                    <Link to={`/movies/${movie.id}`}>
+                                        <img 
+                                            src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
+                                            alt={movie.title}
+                                            className="img-fluid"
+                                        />
+                                    </Link>
+                                }
                             </div>
                             <div className="col-8 p-3">
                                 <h2 className="card-title h6 mb-2"><Link to={`/movies/${movie.id}`} className="text-reset text-decoration-none">{movie.title}</Link></h2>

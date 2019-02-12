@@ -30,11 +30,13 @@ class MovieShow extends React.Component {
                         <div className="col-12">
                             <div className="row no-gutters">
                                 <div className="col-6 col-md-4">
-                                    <img 
-                                        src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
-                                        alt={movie.title}
-                                        className="img-fluid"
-                                    />
+                                    {movie.poster_path &&
+                                        <img 
+                                            src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
+                                            alt={movie.title}
+                                            className="img-fluid"
+                                        />
+                                    }
                                 </div>
                                 <div className="col-12 col-md-8 p-0 p-md-3">
                                     <h1 className="mb-1">{movie.title}</h1>
@@ -44,7 +46,7 @@ class MovieShow extends React.Component {
                                         <span className="ml-2 text-muted">{movie.vote_count} votes</span>
                                     </div>
                                     <h2 className="h4">Overview</h2>
-                                    <p>{movie.overview}</p>
+                                    <p>{movie.overview ? movie.overview : 'Overview not available'}</p>
                                     <div className="d-inline-block mr-4"><span className="font-weight-bold">Status:</span> {movie.status}</div>
                                     <div className="d-inline-block mr-4"><span className="font-weight-bold">Runtime:</span> {convertMinutes(movie.runtime)}</div>
                                 </div>

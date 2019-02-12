@@ -28,11 +28,13 @@ class PersonShow extends React.Component {
                 <div className="container">
                     <div className="row mb-5">
                         <div className="col-6 col-md-3">
-                            <img 
-                                src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${person.profile_path}`}
-                                alt={person.name}
-                                className="img-fluid"
-                            />
+                            {person.profile_path &&
+                                <img 
+                                    src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${person.profile_path}`}
+                                    alt={person.name}
+                                    className="img-fluid"
+                                />
+                            }
                         </div>
                         <div className="col-12 col-md-9">
                             <h1 className="mb-1">{person.name}</h1>
@@ -40,7 +42,7 @@ class PersonShow extends React.Component {
                                 Born in {person.place_of_birth} on {person.birthday}
                             </div>
                             <h2 className="h4">Biography</h2>
-                            <p>{person.biography}</p>
+                            <p>{person.biography ? person.biography : 'Biography not available'}</p>
                         </div>
                     </div>
                     <h2 className="h4">Filmography</h2>
