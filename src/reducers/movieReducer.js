@@ -10,7 +10,7 @@ export default (state = {}, action) => {
         case FETCH_MOVIES:
             return action.payload;
         case FETCH_MOVIE:
-            return { ...state, [action.payload.id]: action.payload };
+            return { [action.payload.id]: action.payload };
         default:
             return state;
     }
