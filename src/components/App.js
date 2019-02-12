@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import history from '../utilities/history';
 
 import Header from './template/Header';
 import trending from '../pages/trending';

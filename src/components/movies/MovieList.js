@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { fetchMovies } from '../../actions';
-import loader from '../../utlities/Loader';
+import loader from '../../utilities/Loader';
 
 // render list of movies
 class MovieList extends React.Component {
@@ -38,7 +38,7 @@ class MovieList extends React.Component {
                                 <h2 className="card-title h6 mb-2"><Link to={`/movies/${movie.id}`} className="text-reset text-decoration-none">{movie.title}</Link></h2>
                                 <p className="card-subtitle small text-muted">{movie.release_date}</p>
                                 <div>
-                                    <span className="display-4 text-info">{movie.vote_average}</span>
+                                    <span className="h2 text-info">{movie.vote_average}</span>
                                     <span className="ml-2 text-muted">{movie.vote_count} votes</span>
                                 </div>
                                 <Link to={`/movies/${movie.id}`}>View details</Link>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchPerson } from '../../actions';
-import loader from '../../utlities/Loader';
+import loader from '../../utilities/Loader';
 
 import MovieList from '../movies/MovieList';
 

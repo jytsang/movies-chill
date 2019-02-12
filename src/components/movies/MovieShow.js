@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import CastList from '../cast/CastList';
 
 import { fetchMovie } from '../../actions';
-import loader from '../../utlities/Loader';
-import convertMinutes from '../../utlities/ConvertMinutes';
+import loader from '../../utilities/Loader';
+import convertMinutes from '../../utilities/ConvertMinutes';
 
 class MovieShow extends React.Component {
 
