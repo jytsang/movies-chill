@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
     SEARCH_MOVIES,
     FETCH_MOVIES,
@@ -9,7 +10,7 @@ export default (state = {}, action) => {
         case FETCH_MOVIES:
             return action.payload;
         case FETCH_MOVIE:
-            return action.payload;
+            return { ...state, [action.payload.id]: action.payload };
         default:
             return state;
     }

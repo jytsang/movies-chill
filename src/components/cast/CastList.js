@@ -22,13 +22,13 @@ class CastList extends React.Component {
         return this.props.cast.map(person => {
             return (
                 <div key={person.id} className="col-6 col-lg-2 my-3 d-flex align-items-stretch">
-                    <Link to={`/person/${person.id}`} className="card w-100 overflow-hidden">
+                    <Link to={`/person/${person.id}`} className="card shadow-sm w-100 overflow-hidden">
                         <img 
                             src={`${process.env.REACT_APP_IMAGE_BASE_URL}w400${person.profile_path}`}
                             alt={person.name}
                             className="img-fluid"
                         />
-                        <h3 className="h6 text-center p-2">{person.name}</h3>
+                        <h3 className="h6 text-center p-2 m-0">{person.name}</h3>
                     </Link>
                 </div>
             );

@@ -7,7 +7,7 @@ import { fetchMovie } from '../../actions';
 import loader from '../../utlities/Loader';
 import convertMinutes from '../../utlities/ConvertMinutes';
 
-class MovieList extends React.Component {
+class MovieShow extends React.Component {
 
     componentDidMount() {
         //fetch movie details from api
@@ -59,10 +59,10 @@ class MovieList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        movie: state.movies
+        movie: state.movies[ownProps.match.params.id]
     };
 };
 
-export default connect(mapStateToProps, { fetchMovie })(MovieList);
+export default connect(mapStateToProps, { fetchMovie })(MovieShow);
