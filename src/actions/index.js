@@ -1,15 +1,19 @@
 import _ from 'lodash';
 import axios from 'axios';
+import history from '../utilities/history';
 
 import {
    FETCH_MOVIES,
    FETCH_MOVIE,
    FETCH_CAST,
-   FETCH_PERSON
+   FETCH_PERSON,
+   SET_KEYWORD
 } from './types';
 
 //get list of movies from api with listType (trending, popular, etc.) parameter
 export const fetchMovies = (listType, ...args) => async dispatch => {
+   console.log('test');
+   
    //convert args array to object with key:value passed through prop
    const params = _.chain(args).keyBy('key').mapValues('data').value();
    
@@ -58,4 +62,9 @@ export const fetchPerson = (id) => async dispatch => {
    const response = await axios.get(`https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_API_KEY}`);
 
    dispatch({ type: FETCH_PERSON, payload: response.data });
+};
+
+export const setKeyword = (keyword) => dispatch => {
+   dispatch({ type: SET_KEYWORD, payload: keyword });
+   history.push(`/search/${keyword}`);
 };
