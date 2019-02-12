@@ -9,7 +9,7 @@ import loader from '../../utlities/Loader';
 class MovieList extends React.Component {
     componentDidMount() {
         //fetch movies from api
-        this.props.fetchMovies();
+        this.props.fetchMovies(this.props.listType, this.props.personId);
     }
 
     //render list of movies
@@ -53,10 +53,8 @@ class MovieList extends React.Component {
     render() {
         return (
             <div className="movies-list py-3">
-                <div className="container">
-                    <div className="row">
-                        {this.renderList()}
-                    </div>
+                <div className="row">
+                    {this.renderList()}
                 </div>
             </div>
         );

@@ -38,7 +38,7 @@ class MovieShow extends React.Component {
                                 </div>
                                 <div className="col-12 col-md-8 p-0 p-md-3">
                                     <h1 className="mb-1">{movie.title}</h1>
-                                    <p className="text-muted">{movie.release_date}</p>
+                                    <p className="text-muted">Release Date: {movie.release_date}</p>
                                     <div className="mb-4">
                                         <span className="display-4 text-info">{movie.vote_average}</span>
                                         <span className="ml-2 text-muted">{movie.vote_count} votes</span>
