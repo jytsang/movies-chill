@@ -28,3 +28,10 @@ export const fetchCast = (id) => async dispatch => {
 
    dispatch({ type: FETCH_CAST, payload: response.data.cast });
 };
+
+//get person details from api with person id paramter in URL
+ export const fetchPerson = (id) => async dispatch => {
+    const response = await axios.get(`https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_API_KEY}`);
+
+    dispatch({ type: FETCH_PERSON, payload: response.data });
+};

@@ -7,7 +7,7 @@ import {
 export default (state = {}, action) => {
     switch (action.type) {
         case FETCH_CAST:
-            return { ...state, ..._.mapKeys(action.payload, 'id') };
+            return { ...state, ..._.mapKeys(action.payload, 'cast_id') };
         case FETCH_PERSON:
             return { ...state, [action.payload.id]: action.payload };
         default:

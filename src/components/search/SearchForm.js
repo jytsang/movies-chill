@@ -11,7 +11,7 @@ class SearchForm extends React.Component {
         return (
             <form onSubmit={this.onSubmit} className="form-inline">
                 <Field name="keyword" component="input" type="text" className="form-control mr-2" placeholder="Search movie title..." />
-                <button type="submit" className="btn btn-primary">Search Movies</button>
+                <button type="submit" className="btn btn-primary mt-2 mt-md-0">Search Movies</button>
             </form>
         );
     }
