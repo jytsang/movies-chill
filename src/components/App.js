@@ -3,6 +3,7 @@ import { Router, Route, Redirect, Switch } from 'react-router-dom';
 import history from '../utilities/history';
 
 import Header from './template/Header';
+import Footer from './template/Footer';
 import trending from '../pages/trending';
 import popular from '../pages/popular';
 import search from '../pages/search';
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="/person/:id" exact component={PersonShow} />
                     <Redirect to="/" />
                 </Switch>
+                <Footer />
             </div>
         </Router>
     );
