@@ -14,7 +14,7 @@ import {
 ES6Promise.polyfill();
 
 //get list of movies from api with listType (trending, popular, etc.) parameter
-export const fetchMovies = (listType, args) => async dispatch => {       
+export const fetchMovies = (listType, args) => async dispatch => {
    let pageNumber = args.pageNumber;
    
    let response = {};
@@ -68,5 +68,5 @@ export const fetchPerson = (id) => async dispatch => {
 export const setKeyword = (keyword) => dispatch => {
    dispatch({ type: SET_KEYWORD, payload: keyword });
    history.push(`/search/${keyword}`);
-   dispatch(fetchMovies('search', { key: 'keyword', data: keyword }));
+   dispatch(fetchMovies('search', { keyword }));
 };
