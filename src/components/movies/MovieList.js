@@ -23,7 +23,7 @@ class MovieList extends React.Component {
         return this.props.movies.results.map(movie => {
             return (
                 <div key={movie.id} className="col-12 col-md-6 col-lg-4 my-3 d-flex align-items-stretch">
-                    <div className="card shadow-sm overflow-hidden w-100">
+                    <div className="shadow rounded overflow-hidden w-100">
                         <div className="row no-gutters">
                             <div className="col-4">
                                 {movie.poster_path &&

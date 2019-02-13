@@ -24,7 +24,7 @@ class CastList extends React.Component {
         return this.props.cast.map(person => {
             return (
                 <div key={person.id} className="col-6 col-lg-2 my-3 d-flex align-items-stretch">
-                    <Link to={`/person/${person.id}`} className="card shadow-sm w-100 overflow-hidden">
+                    <Link to={`/person/${person.id}`} className="shadow rounded w-100 overflow-hidden">
                         {person.profile_path &&
                             <img 
                                 src={`${process.env.REACT_APP_IMAGE_BASE_URL}w400${person.profile_path}`}

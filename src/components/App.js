@@ -12,6 +12,8 @@ import PersonShow from './cast/PersonShow';
 
 const App = () => {
     return (
+        //use Router for history compatibility
+        //use Switch and exact for routes to match correct URL once
         <Router history={history}>
             <div className="wrapper">
                 <Header />
