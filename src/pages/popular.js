@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MovieList from '../components/movies/MovieList';
+import Paginate from '../components/template/Paginate';
 
 // render page for popular movies
 class popular extends React.Component {
@@ -10,6 +11,9 @@ class popular extends React.Component {
                 <div className="container">
                     <h1>Popular Movies</h1>
                     <MovieList listType="popular" />
+                    <div className="my-4">
+                        <Paginate />
+                    </div>
                 </div>
             </div>
         );
