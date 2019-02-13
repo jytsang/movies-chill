@@ -1,6 +1,6 @@
 ## Evaluation project for Indorse
 
-This project was created to fetch movies and people from [The Movie Database API](https://www.themoviedb.org/documentation/api). It uses the React Javascript framework to render content and Redux for state control.
+This project was created to fetch movies and people from [The Movie Database API](https://www.themoviedb.org/documentation/api). It uses the React Javascript framework to render content and Redux for state control. Default [Bootstrap 4](https://getbootstrap.com/) styles are used to keep the project focused on React.
 
 In the project directory, you can run:
 
@@ -8,6 +8,8 @@ In the project directory, you can run:
 
 This will run the app and make it available on localhost.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+**Note:** API key is in a universal .env file for convenience in running this project. For production projects the API key should be hidden with .env.local/development and .env.production files.
 
 ## Core Modules
 
@@ -34,3 +36,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Redux Form
 
 [Redux Form](https://redux-form.com/8.1.0/) is used to create the search box and connect the form to the redux state.
+
+### React Paginate
+
+[React Paginate](https://github.com/AdeleD/react-paginate) component is used for pagination in the movie listing pages.
