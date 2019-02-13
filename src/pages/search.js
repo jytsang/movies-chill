@@ -24,7 +24,7 @@ class search extends React.Component {
                     <p>Showing movies for "{keyword}"</p>
                     <MovieList listType="search" args={{ keyword: keyword, pageNumber: pageNumber }} />
                     <div className="my-4">
-                        <Paginate onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
+                        <Paginate pageCount={this.props.movies.total_pages} onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
                     </div>
                 </div>
             </div>
@@ -34,7 +34,8 @@ class search extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        keyword: state.keyword
+        keyword: state.keyword,
+        movies: state.movies
     };
 };
 

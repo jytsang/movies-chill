@@ -21,11 +21,18 @@ class trending extends React.Component {
                     <h1>Trending Movies</h1>
                     <MovieList listType="trending" args={{ pageNumber }} />
                     <nav className="my-4 table-responsive">
-                        <Paginate onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
+                        <Paginate pageCount={this.props.movies.total_pages} onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
                     </nav>
                 </div>
             </div>
         );
     }
 }
-export default connect(null, { fetchMovies })(trending);
+
+const mapStateToProps = (state) => {
+    return {
+        movies: state.movies
+    };
+};
+
+export default connect(mapStateToProps, { fetchMovies })(trending);
