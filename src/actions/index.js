@@ -1,3 +1,4 @@
+import ES6Promise from 'es6-promise';
 import _ from 'lodash';
 import axios from 'axios';
 import history from '../utilities/history';
@@ -10,13 +11,16 @@ import {
    SET_KEYWORD
 } from './types';
 
+//polyfill for promises (for IE support)
+ES6Promise.polyfill();
+
 //get list of movies from api with listType (trending, popular, etc.) parameter
 export const fetchMovies = (listType, ...args) => async dispatch => {
    //convert args array to object with key:value passed through prop
    const params = _.chain(args).keyBy('key').mapValues('data').value();
    
    let response = {};
-
+   //get data from API depending on the list type
    switch (listType) {
       case 'trending':
          response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie/day?api_key=${process.env.REACT_APP_API_KEY}`);

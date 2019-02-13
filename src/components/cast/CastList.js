@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -15,6 +16,7 @@ class CastList extends React.Component {
     renderList() {        
         //wait for list of results
         if (!this.props.cast) {
+            //if no cast available return
             return <div>No cast available</div>;
         }
         
@@ -50,7 +52,8 @@ class CastList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        cast: Object.values(state.cast)
+        //use lodash for ie support
+        cast: _.values(state.cast)
     };
 };
 
