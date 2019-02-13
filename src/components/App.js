@@ -20,8 +20,11 @@ const App = () => {
                 <Switch>
                     <Route path="/" exact render={() => <Redirect to='/trending'/>} />
                     <Route path="/trending" exact component={trending} />
+                    <Route path="/trending/:pageNumber" exact component={trending} />
                     <Route path="/popular" exact component={popular} />
+                    <Route path="/popular/:pageNumber" exact component={popular} />
                     <Route path="/search/:keyword" exact component={search} />
+                    <Route path="/search/:keyword/:pageNumber" exact component={search} />
                     <Route path="/movies/:id" exact component={MovieShow} />
                     <Route path="/person/:id" exact component={PersonShow} />
                     <Redirect to="/" />
