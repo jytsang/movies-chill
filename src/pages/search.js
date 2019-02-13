@@ -23,6 +23,9 @@ class search extends React.Component {
                     <h1>Search Results</h1>
                     <p>Showing movies for "{keyword}"</p>
                     <MovieList listType="search" args={{ keyword: keyword, pageNumber: pageNumber }} />
+                    {this.props.movies.total_results === 0 &&
+                        <p>No movies available</p>
+                    }
                     <div className="my-4">
                         <Paginate pageCount={this.props.movies.total_pages} onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
                     </div>

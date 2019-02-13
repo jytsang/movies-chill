@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchPerson } from '../../actions';
 import loader from '../../utilities/Loader';
+import NoImage from '../template/NoImage';
 
 import MovieList from '../movies/MovieList';
 
@@ -28,12 +29,15 @@ class PersonShow extends React.Component {
                 <div className="container">
                     <div className="row mb-5">
                         <div className="col-6 col-md-3">
-                            {person.profile_path &&
+                            {person.profile_path ? (
                                 <img 
                                     src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${person.profile_path}`}
                                     alt={person.name}
                                     className="img-fluid"
                                 />
+                            ) : (
+                                <NoImage />
+                            )
                             }
                         </div>
                         <div className="col-12 col-md-9">

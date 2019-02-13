@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { fetchMovies } from '../../actions';
 import loader from '../../utilities/Loader';
+import NoImage from '../template/NoImage';
 
 // render list of movies
 class MovieList extends React.Component {
@@ -26,7 +27,7 @@ class MovieList extends React.Component {
                     <div className="shadow rounded overflow-hidden w-100">
                         <div className="row no-gutters">
                             <div className="col-4">
-                                {movie.poster_path &&
+                                {movie.poster_path  ? (
                                     <Link to={`/movies/${movie.id}`}>
                                         <img 
                                             src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
@@ -34,6 +35,9 @@ class MovieList extends React.Component {
                                             className="img-fluid"
                                         />
                                     </Link>
+                                ) : (
+                                    <NoImage />
+                                )
                                 }
                             </div>
                             <div className="col-8 p-3">

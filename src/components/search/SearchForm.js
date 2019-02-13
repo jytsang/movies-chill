@@ -9,6 +9,7 @@ class SearchForm extends React.Component {
     onSubmit = (formValues) => {
         if(formValues.keyword){
             this.props.setKeyword(formValues.keyword);
+            this.props.reset();
         }
     }
 

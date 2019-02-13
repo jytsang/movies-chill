@@ -6,6 +6,7 @@ import CastList from '../cast/CastList';
 import { fetchMovie } from '../../actions';
 import loader from '../../utilities/Loader';
 import convertMinutes from '../../utilities/ConvertMinutes';
+import NoImage from '../template/NoImage';
 
 class MovieShow extends React.Component {
 
@@ -30,12 +31,15 @@ class MovieShow extends React.Component {
                         <div className="col-12">
                             <div className="row no-gutters">
                                 <div className="col-6 col-md-4">
-                                    {movie.poster_path &&
+                                    {movie.poster_path ? (
                                         <img 
                                             src={`${process.env.REACT_APP_IMAGE_BASE_URL}w342${movie.poster_path}`}
                                             alt={movie.title}
                                             className="img-fluid"
                                         />
+                                    ) : (
+                                        <NoImage />
+                                    )
                                     }
                                 </div>
                                 <div className="col-12 col-md-8 p-0 p-md-3">
@@ -55,6 +59,9 @@ class MovieShow extends React.Component {
                     </div>
                     <h2 className="h4">Cast</h2>
                     <CastList castId={this.props.match.params.id} />
+                    {!this.props.case &&
+                        <p>No cast available</p>
+                    }
                 </div>
             </div>
         );
@@ -63,7 +70,8 @@ class MovieShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        movie: state.movies[ownProps.match.params.id]
+        movie: state.movies[ownProps.match.params.id],
+        cast: state.cast
     };
 };
 
