@@ -46,7 +46,7 @@ class PersonShow extends React.Component {
                         </div>
                     </div>
                     <h2 className="h4">Filmography</h2>
-                    <MovieList listType="filmography" args={{ key: 'personId', data: person.id }} />
+                    <MovieList listType="filmography" args={{ personId: person.id }} />
                 </div>
             </div>
         );

@@ -19,7 +19,7 @@ class popular extends React.Component {
             <div className="popular-movies py-3">
                 <div className="container">
                     <h1>Popular Movies</h1>
-                    <MovieList listType="popular" args={{ key: 'pageNumber', data: pageNumber }} />
+                    <MovieList listType="popular" args={{ pageNumber }} />
                     <nav className="my-4 table-responsive">
                         <Paginate onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
                     </nav>

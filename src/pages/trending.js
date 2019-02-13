@@ -19,7 +19,7 @@ class trending extends React.Component {
             <div className="trending-movies py-3">
                 <div className="container">
                     <h1>Trending Movies</h1>
-                    <MovieList listType="trending" args={{ key: 'pageNumber', data: pageNumber }} />
+                    <MovieList listType="trending" args={{ pageNumber }} />
                     <nav className="my-4 table-responsive">
                         <Paginate onPageChange={this.handlePaginationClick} pageNumber={parseInt(pageNumber)} />
                     </nav>

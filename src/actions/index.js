@@ -1,5 +1,4 @@
 import ES6Promise from 'es6-promise';
-import _ from 'lodash';
 import axios from 'axios';
 import history from '../utilities/history';
 
@@ -15,10 +14,8 @@ import {
 ES6Promise.polyfill();
 
 //get list of movies from api with listType (trending, popular, etc.) parameter
-export const fetchMovies = (listType, ...args) => async dispatch => {
-   //convert args array to object with key:value passed through prop
-   const params = _.chain(args).keyBy('key').mapValues('data').value();
-   let pageNumber = params.pageNumber;
+export const fetchMovies = (listType, args) => async dispatch => {       
+   let pageNumber = args.pageNumber;
    
    let response = {};
    //get data from API depending on the list type
@@ -30,11 +27,11 @@ export const fetchMovies = (listType, ...args) => async dispatch => {
          response = await axios.get(`https://api.themoviedb.org/3/movie/${listType}?api_key=${process.env.REACT_APP_API_KEY}&page=${pageNumber}`);
          break;
       case 'search':
-         const keyword = params.keyword;
-         response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${keyword}`);
+         const keyword = args.keyword;
+         response = await axios.get(`https://api.themoviedb.org/3/${listType}/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${keyword}&page=${pageNumber}`);
          break;
       case 'filmography':
-         const personId = params.personId;
+         const personId = args.personId;
          response = await axios.get(`https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${process.env.REACT_APP_API_KEY}`);
          response.data.results = response.data.cast;
          break;
